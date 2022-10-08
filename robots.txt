@@ -1,0 +1,14 @@
+User-agent: *
+Disallow:
+Disallow: /app
+Disallow: /bootstrap
+Disallow: /cgi-bin
+Disallow: /config
+Disallow: /database
+Disallow: /resources
+Disallow: /routes
+Disallow: /tests
+Disallow: /vendor
+Disallow: /superadmin/
+Disallow: /admin/
+Disallow: /cart/

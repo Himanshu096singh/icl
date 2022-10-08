@@ -1,0 +1,141 @@
+.border-radius{
+	border-radius:50% !important;
+}
+.subcat1{
+	display: none;
+}
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.blog-related-post{
+	height: 137px !important;
+}
+@media only screen and (min-width: 600px) {
+.sub-category-img-circle {
+    display: block;
+    width: 100%;
+    height: 157px !important;
+     
+}
+.shop-products{
+	height: 217px;
+}
+}
+@media only screen and (max-width: 600px) {
+.shop-products{
+	height: 159px;
+}
+.m-none{
+  display: none;
+}
+}
+.bg-info, .bg-info>a {
+   color: #fff!important;
+}
+.bg-info {
+   background-color: #0077b5!important;
+}
+.small-box {
+   border-radius: .25rem;
+   box-shadow: 0 0 1px rgba(0,0,0,.125), 0 1px 3px rgba(0,0,0,.2);
+   display: block;
+   margin-bottom: 20px;
+   position: relative;
+}
+.small-box>.inner {
+   padding: 10px;
+       height: 108px;
+}
+.small-box p,.small-box h3{
+  color: #fff;
+}
+.small-box .icon {
+   color: rgba(0,0,0,.15);
+   z-index: 0;
+}
+.small-box>.small-box-footer {
+   background: rgba(0,0,0,.1);
+   color: rgba(255,255,255,.8);
+   display: block;
+   padding: 3px 0;
+   position: relative;
+   text-align: center;
+   text-decoration: none;
+   z-index: 10;
+}
+.widget-newsletter p {
+  color: #fff;
+}
+.footer-copyright{
+  color: #fff;
+}
+.dashboard-icon-opacity{
+    opacity: 0.3;
+    color: #000;
+}
+.zoom:hover {
+  transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+.zoom {
+   
+  transition: transform .4s;
+   
+}
+
+
+
+
+/**************************new *******************************/
+.product-details .product-title {
+    font-weight: 400;
+    font-size: 2.4rem;
+    letter-spacing: -.025em;
+    margin-bottom: 1.2rem;
+    margin-top: -.5rem;
+    padding-right: 1rem;
+    text-align: left !important;
+}
+.page-content {
+    padding-bottom: 0rem !important;
+}
+.footer{
+  margin-top: 5rem;
+}
+.top-deal{
+  display: none;
+}
+@media (max-width:600px)
+{ 
+  .top-deal{
+  display: block;
+}
+.top-deal-desktop{
+  display: none;
+}
+
+}
+.sitemap-img-logo div {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    float: left;
+    width: 50%;
+    font-size: 15px;
+    font-weight: 600;
+    color: #000;
+}
+.sitemap-cat .col-lg-4 h6 a strong {
+    color: #4a4a4a;
+    font-weight: 400;
+}
+.not-allowed {
+    cursor: not-allowed;
+}
+.out-of-stock{
+    background:#777575 !important;
+}
+.opacity{
+    opacity:0.6;
+}
