@@ -59,7 +59,7 @@
       <div class="row justify-content-center">
          <div class="col-md-6">
             <div class="heading_s1 text-center">
-               <h1>Shop by Category</h1>
+               <h1>Shop by Category.</h1>
                <img src="{{ url('public/frontend/images/border/divider.png') }}" alt="divider">
             </div>
          </div>
