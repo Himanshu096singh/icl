@@ -42,7 +42,7 @@ class ShopController extends Controller
                         ->where('category_id', $category->id)
                         ->get();
                 } else {
-                   $products = Product::where('category_id',$category->id)->where('subcategory_id', $subcategory->id)->get();
+                   $products = Product::where('category_id',$category->id)->where('subcategory_id', $subcategory->id)->latest()->get();
                 }
                 $colors = Color::all();
                 $max_price = Product::max('price');
@@ -64,7 +64,18 @@ class ShopController extends Controller
     }
     public function category($category)
     {
-        $category = Product_category::where('slug', $category)->first();
+        $collection = Brand::where('slug', $category)->first();
+        if($collection){
+            $products = Product::where('brand_id',$collection->id)->where("deleted_at",null)->latest()->get();
+                $meta = [
+                    'title' => $collection->meta_title,
+                    'keyword' => $collection->meta_keyword,
+                    'description' => $collection->meta_description
+                ];
+                return view('collection_detail', compact('meta', 'collection','products'));
+        } else {
+
+            $category = Product_category::where('slug', $category)->first();
         if ($category) {
             if (isset($_GET['size'])) {
                 $products_c = Product::where('size', 'like', '%"' . $_GET['size'] . '"%')
@@ -72,7 +83,7 @@ class ShopController extends Controller
                     ->count();
 
                 $products = Product::where('size', 'like', '%"' . $_GET['size'] . '"%')
-                    ->where('category_id', $category->id)
+                    ->where('category_id', $category->id)->latest()
                     ->get();
             } else if (isset($_GET['price_range'])) {
                 $products_c = Product::where('price', '<=', $_GET['price_range'])
@@ -80,13 +91,13 @@ class ShopController extends Controller
                     ->count();
 
                 $products = Product::where('price', '<=', $_GET['price_range'])
-                    ->where('category_id', $category->id)
+                    ->where('category_id', $category->id)->latest()
                     ->get();
             } else {
                 $products_c = Product::where('category_id', $category->id)
                     ->count();
 
-                $products = Product::where('category_id', $category->id)
+                $products = Product::where('category_id', $category->id)->latest()
                     ->get();
             }
             $max_price = Product::max('price');
@@ -99,10 +110,16 @@ class ShopController extends Controller
                 'keyword' => 'shop',
                 'description' => 'We are the best online designer clothing store in Delhi NCR to buy Kurti, tops, shirts, dresses, pants, palazzos, dupattas, pajama, kaftans & mask for Women'
             ];
-            return view('pages.category', compact('products', 'products_c', 'subcategory_list', 'sizes', 'max_price', 'collections', 'colors', 'meta'));
+            // return view('pages.category', compact('products', 'products_c', 'subcategory_list', 'sizes', 'max_price', 'collections', 'colors', 'meta'));
+            return view('shop', compact('products', 'products_c', 'subcategory_list', 'sizes', 'max_price', 'collections', 'colors', 'meta'));
+
         } else {
             return redirect()->back();
         }
+
+        }
+
+        
     }
     public function shop()
     {
@@ -127,8 +144,9 @@ class ShopController extends Controller
                 $sort = 'ASC';
             }
             $products = Product::with(['collection','category'])->orderBy('price', $sort)->get();
-        } else {            
-            $products = Product::with(['collection', 'category'])->orderBy('id', 'DESC')->paginate(15);
+        } else {      
+             
+            $products = Product::latest()->get();
         }
         $max_price = Product::max('price');
         $sizes = Size::all();

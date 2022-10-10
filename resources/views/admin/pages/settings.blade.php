@@ -32,8 +32,6 @@
                   <div class="card-header">
                      <h3 class="card-title">Store Settings</h3>
                   </div>
-                  <!-- /.card-header -->
-                  <!-- form start -->
                   <form action="{{url('admin/settings/update')}}" method="post"  enctype="multipart/form-data">
                      @csrf
                      @foreach($setting as $item)

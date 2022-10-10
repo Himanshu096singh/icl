@@ -1,4 +1,6 @@
 <?php $__env->startSection('content'); ?>
+<?php $__env->startSection('css'); ?>
+<?php $__env->stopSection(); ?>
 <!-- START SECTION BREADCRUMB -->
 <div class="breadcrumb_section bg_gray page-title-mini">
    <div class="container">

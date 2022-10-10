@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
-
+ 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -286,7 +286,8 @@ class OrderController extends Controller
             $billing = Billing::where("order_id", $order_id)->first();
             $pdf = PDF::loadView('myPDF', compact("invoice", "settings", "user", "billing", "order"));
             // return $pdf->download("INV".sprintf("%08d", $invoice->id).'.pdf');
-            return $pdf->stream();
+            // return $pdf->stream();
+            return $pdf->output();
         } else {
             $msg = array(
                 'message' => 'Invoice does not exists',

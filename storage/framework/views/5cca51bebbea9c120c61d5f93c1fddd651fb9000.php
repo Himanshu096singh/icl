@@ -14,28 +14,40 @@
       <!-- The slideshow -->
       <div class="carousel-inner">
          <div class="carousel-item active">
-            <img src="<?php echo e(url('public/frontend/images/banner/1.jpg')); ?>" alt="" class="d-none d-sm-block">
-            <img src="<?php echo e(url('public/frontend/images/banner/mob-1.jpg')); ?>" alt="" class="d-block d-sm-none mob-banner">
+            <a href="<?php echo e(url('shop')); ?>">
+               <img src="<?php echo e(url('public/frontend/images/banner/1.jpg')); ?>" alt="" class="d-none d-sm-block">
+               <img src="<?php echo e(url('public/frontend/images/banner/mob-1.jpg')); ?>" alt="" class="d-block d-sm-none mob-banner">
+            </a>
          </div>
          <div class="carousel-item">
-            <img src="<?php echo e(url('public/frontend/images/banner/2.jpg')); ?>" alt="" class="d-none d-sm-block">
-            <img src="<?php echo e(url('public/frontend/images/banner/mob-2.jpg')); ?>" alt="" class="d-block d-sm-none mob-banner">
+            <a href="<?php echo e(url('shop')); ?>">
+               <img src="<?php echo e(url('public/frontend/images/banner/2.jpg')); ?>" alt="" class="d-none d-sm-block">
+               <img src="<?php echo e(url('public/frontend/images/banner/mob-2.jpg')); ?>" alt="" class="d-block d-sm-none mob-banner">
+            </a>
          </div>
          <div class="carousel-item">
-            <img src="<?php echo e(url('public/frontend/images/banner/3.jpg')); ?>" alt="" class="d-none d-sm-block">
-            <img src="<?php echo e(url('public/frontend/images/banner/mob-3.jpg')); ?>" alt="" class="d-block d-sm-none mob-banner">
+            <a href="<?php echo e(url('shop')); ?>">
+               <img src="<?php echo e(url('public/frontend/images/banner/3.jpg')); ?>" alt="" class="d-none d-sm-block">
+               <img src="<?php echo e(url('public/frontend/images/banner/mob-3.jpg')); ?>" alt="" class="d-block d-sm-none mob-banner">
+            </a>
          </div>
          <div class="carousel-item">
-            <img src="<?php echo e(url('public/frontend/images/banner/4.jpg')); ?>" alt="" class="d-none d-sm-block">
-            <img src="<?php echo e(url('public/frontend/images/banner/mob-4.jpg')); ?>" alt="" class="d-block d-sm-none mob-banner">
+            <a href="<?php echo e(url('shop')); ?>">
+               <img src="<?php echo e(url('public/frontend/images/banner/4.jpg')); ?>" alt="" class="d-none d-sm-block">
+               <img src="<?php echo e(url('public/frontend/images/banner/mob-4.jpg')); ?>" alt="" class="d-block d-sm-none mob-banner">
+            </a>
          </div>
          <div class="carousel-item">
-            <img src="<?php echo e(url('public/frontend/images/banner/5.jpg')); ?>" alt="" class="d-none d-sm-block">
-            <img src="<?php echo e(url('public/frontend/images/banner/mob-5.jpg')); ?>" alt="" class="d-block d-sm-none mob-banner">
+            <a href="<?php echo e(url('shop')); ?>">
+               <img src="<?php echo e(url('public/frontend/images/banner/5.jpg')); ?>" alt="" class="d-none d-sm-block">
+               <img src="<?php echo e(url('public/frontend/images/banner/mob-5.jpg')); ?>" alt="" class="d-block d-sm-none mob-banner">
+            </a>
          </div>
          <div class="carousel-item">
-            <img src="<?php echo e(url('public/frontend/images/banner/6.jpg')); ?>" alt="" class="d-none d-sm-block">
-            <img src="<?php echo e(url('public/frontend/images/banner/mob-6.jpg')); ?>" alt="" class="d-block d-sm-none mob-banner">
+            <a href="<?php echo e(url('shop')); ?>">
+               <img src="<?php echo e(url('public/frontend/images/banner/6.jpg')); ?>" alt="" class="d-none d-sm-block">
+               <img src="<?php echo e(url('public/frontend/images/banner/mob-6.jpg')); ?>" alt="" class="d-block d-sm-none mob-banner">
+            </a>
          </div>
       </div>
    </div>

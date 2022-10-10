@@ -111,7 +111,7 @@ class GuestController extends Controller
                         'cart_ids' => $order_details->cart_ids,
                         'total_amount' => $order_details->total_price,
                     ];
-                    // Mail::to($customer_details->email)->send(new OrderConfirm($data));                   
+                   // Mail::to($customer_details->email)->send(new OrderConfirm($data));                   
                     
                     ShoppingCart::clear();
                     ShoppingCart::clearCartConditions();

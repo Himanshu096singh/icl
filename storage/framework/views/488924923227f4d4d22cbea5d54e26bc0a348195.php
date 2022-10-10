@@ -432,9 +432,7 @@
              s.onload = function () { WhWidgetSendButton.init(host, proto, options); };
              var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
          })();
-      </script>
-      <!-- /WhatsHelp.io widget -->
-      <script>
+
          $( function() {
           $( "#slider-range-min" ).slider({
             range: "min",
@@ -447,11 +445,8 @@
           });
           $( "#amount" ).val($( "#slider-range-min" ).slider( "value" ) );
          } );
-      </script>
       
-    <script>
-        
-          $(document).ready(function(){
+      $(document).ready(function(){
              setTimeout(function() {
                  $('.product-notpopup').addClass('showp');
                 }, 5000);
@@ -476,15 +471,13 @@
       }, 1300)
      });
     });
-</script>
-
-   <script type="text/javascript">
-      $(document).ready(function(){
+$(document).ready(function(){
         $("#fliter-sh").click(function () {
           $("#sidebar").fadeToggle("slow");
         });
       });
     </script>
+
      <?php
         $info = DB::table('headers')->first();
       ?>

@@ -11,7 +11,7 @@
           <?php $collections = \App\Models\Brand::latest()->get(); ?>
           <?php $__currentLoopData = $collections; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $collection): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>              
             <li>
-               <a href="<?php echo e(url('shop?collection='.$collection->slug)); ?>">
+               <a href="<?php echo e(url($collection->slug)); ?>">
                   <span class="categories_name"><?php echo e($collection->name); ?></span>
                   <span class="categories_num">(<?php echo e(\App\Models\Admin\Product::where('brand_id',$collection->id)->count()); ?>)</span>
                </a>

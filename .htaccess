@@ -16,7 +16,7 @@ Deny from all
    # RewriteEngine On
     
     #RewriteCond %{HTTPS} !^on$
-#RewriteRule ^.*$ https://%{SERVER_NAME}%{REQUEST_URI} [R,L]
+#RewriteRule ^.*$ http://%{SERVER_NAME}%{REQUEST_URI} [R,L]
 
 RewriteEngine On
 
@@ -30,7 +30,7 @@ RewriteRule ^(.*)index.php$ /$1 [R=301,L]
 RewriteCond %{HTTPS} off [OR]
 RewriteCond %{HTTP_HOST} ^www\. [NC]
 RewriteCond %{HTTP_HOST} ^(?:www\.)?(.+)$ [NC]
-RewriteRule ^ https://%1%{REQUEST_URI} [L,NE,R=301]
+RewriteRule ^ http://%1%{REQUEST_URI} [L,NE,R=301]
 
 
 

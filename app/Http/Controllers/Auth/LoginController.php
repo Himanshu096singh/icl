@@ -34,12 +34,16 @@ class LoginController extends Controller
     // protected $redirectTo = RouteServiceProvider::HOME;
     protected $redirectTo;
 
+    public function __construct()
+    {
+        $this->middleware('guest')->except('logout');
+        // $this->middleware("admin");
+    }
 
     public function redirectTo()
     {
         if (!empty(Auth::user()->role)) {
             switch (Auth::user()->role) {
-
                 case 1:
                     $this->redirectTo = '/superadmin';
                     return $this->redirectTo;
@@ -52,8 +56,6 @@ class LoginController extends Controller
                     $this->redirectTo = '/customer';
                     return $this->redirectTo;
                     break;
-
-
                 default:
                     $this->redirectTo = '/login';
                     return $this->redirectTo;
@@ -108,10 +110,7 @@ class LoginController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-        // $this->middleware('guest')->except('logout');
-    }
+    
     public function showLoginForm()
     {
         $meta = Meta::tags();

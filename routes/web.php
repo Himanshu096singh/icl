@@ -11,7 +11,7 @@ use App\Http\Controllers\Admin\PageController;
 | Here is where you can register web routes for your application. These
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
-|
+| 
 */
 // Route::get('dashboard','AdminController@dashboard');
 
@@ -144,8 +144,8 @@ Route::post('admin/homepage/update', 'Admin\HomepageController@update');
 Route::get('admin/homepage/delete/{id}', 'Admin\HomepageController@delete');
 Route::post('admin/homepage/update_status', 'Admin\HomepageController@update_status');
 
-Route::get('admin/settings/', 'Admin\PageController@index');
-Route::post('admin/settings/update', 'Admin\PageController@update');
+Route::get('admin/settings/', 'Admin\PagesController@index');
+Route::post('admin/settings/update', 'Admin\PagesController@update');
 
 Route::get('admin/customer', 'Admin\CustomerController@index');
 Route::get('admin/customer/create', 'Admin\CustomerController@create');
@@ -341,4 +341,4 @@ Route::get('image-sitemap.xml','MainController@imagesitemap');
 Route::post('review','MainController@savereview');
 Route::get('{category1}/{category2}/{product}', 'ShopController@product_detail');
 Route::get('{collection}/{category}', 'ShopController@index');
-Route::get('{slug}', 'MainController@collection_detail');
+Route::get('{slug}', 'ShopController@category');

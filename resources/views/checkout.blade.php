@@ -62,10 +62,10 @@
                         </select>
                     </div>                
                     <div class="form-group">
-                        <input type="text" class="form-control" name="address1" required="" placeholder="House number and Street name *" value="{{ $address->address1 }}">
+                        <input type="text" class="form-control" name="address1" required="" placeholder="House number and Street name *" value="">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" name="address2" required="" placeholder="Apartment, suite, unit etc" value="{{ $address->address2 }}">
+                        <input type="text" class="form-control" name="address2" required="" placeholder="Apartment, suite, unit etc" value="">
                     </div>
                     
                     <div class="form-group">

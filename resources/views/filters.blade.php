@@ -11,7 +11,7 @@
           <?php $collections = \App\Models\Brand::latest()->get(); ?>
           @foreach ($collections as $collection)              
             <li>
-               <a href="{{url('shop?collection='.$collection->slug)}}">
+               <a href="{{url($collection->slug)}}">
                   <span class="categories_name">{{ $collection->name }}</span>
                   <span class="categories_num">({{ \App\Models\Admin\Product::where('brand_id',$collection->id)->count() }})</span>
                </a>
