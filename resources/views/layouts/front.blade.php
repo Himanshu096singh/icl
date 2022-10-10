@@ -47,6 +47,112 @@
 
    @section('css')
    @show
+
+
+   <style>
+         .drop-menu{
+         position:relative
+         text-align:center;
+         }
+         .dropdown-main{
+         display:none;
+         }
+         .dropdown-menu{ 
+         width: 70%;
+         height: 200px;
+         position: absolute;
+         margin: auto;
+         /* margin-top:2.5%; */
+         margin-top: -15px !important;
+         display:flex;
+         background-color:white;
+         margin-left: 12% !important;
+         padding-top:20px !important;
+         /* display:none; */
+         /* border:1px solid red !important; */
+         }
+         .dropdown-menu>div{
+         /* border:1px solid red; */
+         height: 200px;
+         width:20%;
+         margin-left:1.7rem;
+         }
+         .dropdown-head{
+         display:flex;
+         justify-content:space-between;
+         }
+         .dropdown-uparrow{
+         margin-top: -5px;
+         display:none;
+         }
+         .top-wear-heading{
+         font-size:15px;
+         line-height:24px;
+         font-weight: 800;       
+         font-family:inherit;
+          color: #c5942c;
+         }
+         .drop-down-li{
+         font-size:13px;
+         line-height:30px;
+         font-weight:400;
+         cursor:pointer;
+         }
+         .drop-down-li:hover{
+         color:#c5942c;
+         }
+         .dropdown-smd{
+            display:none;
+         }
+         @media only screen and (min-width: 768px) and (max-width: 1024px) {
+            .dropdown-lgd{
+               display:none;
+            }
+            .dropdown-smd{
+            display:block;
+          }
+          .catg-flex-sm{
+ 
+            width: 100%;
+
+            display:flex;
+            justify-content:space-between;
+            margin:auto;
+         }
+            .catg-flex-sm-inner{
+            width: 95%;
+            display:flex;
+            justify-content:space-between;
+            margin:auto;
+         }
+         }
+         @media only screen and (min-width: 320px) and (max-width: 480px) {
+            .dropdown-lgd{
+               display:none;
+            }
+          
+         .dropdown-smd{
+            display:block;
+         }
+         .catg-flex-sm{
+ 
+            width: 100%;
+
+             display:flex;
+            justify-content:space-between;
+            margin:auto;
+          }
+         .catg-flex-sm-inner{
+            width: 95%;
+            display:flex;
+            justify-content:space-between;
+            margin:auto;
+          }
+         }
+
+
+         
+      </style>
    </head>
    <body>
       <header class="header_wrap fixed-top header_with_topbar">
@@ -96,21 +202,24 @@
          <div class="bottom_header dark_skin main_menu_uppercase">
             <div class="container">
                <nav class="navbar navbar-expand-lg">
-                  <a class="navbar-brand" href="{{ url('/') }}" style="display: none;">
-                  <img class="logo_light" src="{{ url('public/frontend/images/logo_light.png') }}" alt="{{$info->alt}}" />
-                  <img class="logo_dark" src="{{ url('public/frontend/images/logo_dark.png') }}" alt="{{$info->alt}}" />
-                  </a>
                   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-expanded="false"> 
-                  <span class="ion-android-menu"></span>
+                     <span class="ion-android-menu"></span>
                   </button>
+                  <a class="navbar-brand" href="{{ url('/') }}" style="display: none;">
+                     <img class="logo_light" src="{{ url('public/frontend/images/logo_light.png') }}" alt="{{$info->alt}}" />
+                     <img class="logo_dark" src="{{ url('public/frontend/images/logo_dark.png') }}" alt="{{$info->alt}}" />
+                  </a>
+                  <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-expanded="false"> 
+                  <span class="ion-android-menu"></span>
+                  </button> -->
                   <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
-                     <ul class="navbar-nav">
+                     <ul class="navbar-nav drop-menu">
                         <li class="dropdown dropdown-mega-menu">
                            <a class="nav-link nav_item" href="{{url('collections')}}">Collection</a>
                         </li>
                         <li class="dropdown dropdown-mega-menu">
-                           <a class="dropdown-toggle dropdown-item nav-link nav_item" href="javascript:void()" data-toggle="dropdown"  aria-expanded="false">Categories</a>
-                           <div class="dropdown-menu">
+                           <a class="dropdown-toggle dropdown-item nav-link nav_item hover-color dropdown-lgd" id="abc" href="javascript:void()" onClick = "toggleFunctionCatg()" data-toggle="dropdown"  aria-expanded="false">Categories</a>
+                           <!-- <div class="dropdown-menu">
                               <ul class="mega-menu d-lg-flex">
                                  <li class="mega-menu-col col-lg-6">
                                     <ul class="d-lg-flex d-flex">
@@ -169,8 +278,237 @@
                                     </div>
                                  </li>
                               </ul>
-                           </div>
+                              </div> -->
                         </li>
+                  <li class="nav-item dropdown-smd">
+                           <a class="nav-link collapsed text-truncate catg-flex-sm" href="#submenu1" data-toggle="collapse" data-target="#submenu1">
+                              <span>CATEGORIES</span>  
+                           <i class="ion-ios-arrow-down"></i> 
+                           </a>
+                    <div class="collapse" id="submenu1" aria-expanded="false">
+                        <ul class="flex-column pl-2 nav"> 
+                            <li class="nav-item">
+                              <a class="nav-link  text-truncate collapsed py-1 catg-flex-sm-inner" href="#submenu1sub1" data-toggle="collapse" data-target="#submenu1sub1">
+                                 <span>TOP WEAR</span> 
+                                <i class="ion-ios-arrow-down"></i>
+                              </a>
+                                <div class="collapse" id="submenu1sub1" aria-expanded="false">
+                                    <ul class="flex-column nav pl-4">
+                                        <li class="nav-item">
+                                            <a class="nav-link p-1 text-truncate" href="#"> 
+                                                KURTAS </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link p-1 text-truncate" href="#"> 
+                                                KURTA SETS </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link p-1 text-truncate" href="#"> 
+                                                SHIRTS/TOPS </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link p-1 text-truncate" href="#"> 
+                                                DRESSES </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link  text-truncate collapsed py-1 catg-flex-sm-inner" href="#submenu1sub1" data-toggle="collapse" data-target="#submenu1sub2">
+                                 <span>BOTTOM WEAR</span> 
+                                <i class="ion-ios-arrow-down"></i>
+                              </a>
+                                <div class="collapse" id="submenu1sub2" aria-expanded="false">
+                                    <ul class="flex-column nav pl-4">
+                                        <li class="nav-item">
+                                            <a class="nav-link p-1 text-truncate" href="#"> 
+                                                PANTS </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link p-1 text-truncate" href="#"> 
+                                                PALAZZOS </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link p-1 text-truncate" href="#"> 
+                                                SHORTS </a>
+                                        </li>
+                                        
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link  text-truncate collapsed py-1 catg-flex-sm-inner" href="#submenu1sub1" data-toggle="collapse" data-target="#submenu1sub3">
+                                 <span>DRAPES</span> 
+                                <i class="ion-ios-arrow-down"></i>
+                              </a>
+                                <div class="collapse" id="submenu1sub3" aria-expanded="false">
+                                    <ul class="flex-column nav pl-4">
+                                        <li class="nav-item">
+                                            <a class="nav-link p-1 text-truncate" href="#"> 
+                                                DUPTTAS </a>
+                                        </li> 
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link  text-truncate collapsed py-1 catg-flex-sm-inner" href="#submenu1sub1" data-toggle="collapse" data-target="#submenu1sub4">
+                                 <span>LOUNGEWEAR</span> 
+                                <i class="ion-ios-arrow-down"></i>
+                              </a>
+                                <div class="collapse" id="submenu1sub4" aria-expanded="false">
+                                    <ul class="flex-column nav pl-4">
+                                        <li class="nav-item">
+                                            <a class="nav-link p-1 text-truncate" href="#"> 
+                                                PAJAMA SETS </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link p-1 text-truncate" href="#"> 
+                                                KAFTANS </a>
+                                        </li> 
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link  text-truncate collapsed py-1 catg-flex-sm-inner" href="#submenu1sub1" data-toggle="collapse" data-target="#submenu1sub5">
+                                 <span >ACCESSORIES</span> 
+                                <i class="ion-ios-arrow-down"></i>
+                              </a>
+                                <div class="collapse" id="submenu1sub5" aria-expanded="false">
+                                    <ul class="flex-column nav pl-4">
+                                        <li class="nav-item">
+                                            <a class="nav-link p-1 text-truncate" href="#"> 
+                                                MASK </a>
+                                        </li> 
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link  text-truncate collapsed py-1 catg-flex-sm-inner" href="#submenu1sub1" data-toggle="collapse" data-target="#submenu1sub6">
+                                 <span>DRAPES</span> 
+                                <i class="ion-ios-arrow-down"></i>
+                              </a>
+                                <div class="collapse" id="submenu1sub6" aria-expanded="false">
+                                    <ul class="flex-column nav pl-4">
+                                        <li class="nav-item">
+                                            <a class="nav-link p-1 text-truncate" href="#"> 
+                                                Daily </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link p-1 text-truncate" href="#"> 
+                                                Dashboard </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link p-1 text-truncate" href="#"> 
+                                                Charts </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link p-1 text-truncate" href="#"> 
+                                                Areas </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                        <div class="dropdown-main ">
+                           <div class="dropdown-menu">
+                           <div clas="top-wear">
+                              <div class="dropdown-head">
+                           
+                                 <h3 class="top-wear-heading">TOP WEAR</h3> <i class="ion-ios-arrow-down dropdown-uparrow"></i>
+                              </div>
+                              <ul class="dropDown-ul">
+                                <a href="#"> <li class="drop-down-li">Kurtas</li></a>
+                                 <a href="#"> <li class="drop-down-li">Kurta Sets</li></a>
+                                 <a href="#"> <li class="drop-down-li">Shirts/Tops</li></a>
+                                 <a href="#"> <li class="drop-down-li">Dresses</li></a>
+                              </ul>
+                           </div>
+                           <div clas="bottom-wear"> 
+                              <div class="dropdown-head">
+                           
+                                 <h3 class="top-wear-heading">BOTTOM WEAR</h3> <i class="ion-ios-arrow-down dropdown-uparrow"></i>
+                              </div>
+                              <ul class="dropDown-ul">
+                                 <a href="#"> <li class="drop-down-li">Pants</li></a>
+                                 <a href="#"> <li class="drop-down-li">Palazzos</li></a>
+                                 <a href="#"> <li class="drop-down-li">Shorts</li></a> 
+                              </ul>
+                           
+                           </div>
+                           <div clas="drapes">
+                               <div class="dropdown-head">
+                           
+                                 <h3 class="top-wear-heading">DRAPES</h3> <i class="ion-ios-arrow-down dropdown-uparrow"></i>
+                              </div>
+                              <ul class="dropDown-ul">
+                                 <a href="#"> <li class="drop-down-li">Dupattas</li></a> 
+                              </ul>
+                           
+                           </div>
+                           <div clas="loungewear">
+                           <div class="dropdown-head">
+                           
+                              <h3 class="top-wear-heading">LOUNGEWEAR</h3> <i class="ion-ios-arrow-down dropdown-uparrow"></i>
+                              </div>
+                              <ul class="dropDown-ul">
+                                 <a href="#"> <li class="drop-down-li">Pajama Sets</li></a>
+                                 <a href="#"> <li class="drop-down-li">Kaftans</li></a> 
+                              </ul>
+                           
+                           </div>
+                           <div clas="accessories">
+                           <div class="dropdown-head">
+                           
+                              <h3 class="top-wear-heading">ACCESSORIES</h3> <i class="ion-ios-arrow-down dropdown-uparrow"></i>
+                              </div>
+                              <ul class="dropDown-ul">
+                              <a href="#"> <li class="drop-down-li">Mask</li></a> 
+                              </ul>
+                           
+                           </div>
+                           <div clas="accessories">
+                              <div class="dropdown-head">
+                           
+                                 <h3 class="top-wear-heading">TOP WEAR</h3> <i class="ion-ios-arrow-down dropdown-uparrow"></i>
+                              </div>
+                              <ul class="dropDown-ul">
+                              <a href="#"> <li class="drop-down-li">Mask</li></a> 
+                              </ul>
+                           
+                           </div>
+                           
+                           
+                           </div>
+                           </div>
+                        <!-- <li class="nav-item dropdown">
+                           <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+                           Dropdown link
+                           </a>
+                           <ul class="dropdown-menu">
+                              <li class="nav-item dropdown">
+                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+                                 Dropdown link1
+                                 </a>
+                                    <ul class="dropdown-menu">
+                                       <li class="nav-item dropdown">
+                                          <a class="dropdown-item" href="#">Inner Action 1</a>
+                                       </li>
+                                       <li class="nav-item dropdown">
+                                          <a class="dropdown-item" href="#">Inner Action 2</a>
+                                       </li>
+                                    </ul>
+                              </li>
+                              <li class="nav-item dropdown">
+                                 <a class="dropdown-item" href="#">Action</a>
+                              </li>
+                              <li class="nav-item dropdown">
+                                 <a class="dropdown-item" href="#">Action</a>
+                              </li>
+                           </ul>
+                        </li> -->
+                        
                         <li>
                            <a class="nav-link nav_item" href="{{ url('about-the-brand') }}">About The Brand</a>
                         </li>
@@ -497,6 +835,37 @@ $(document).ready(function(){
           $("#sidebar").fadeToggle("slow");
         });
       });
+
+
+          //  dropDown toggle for categories
+          let dropdownToggle = document.querySelector(".dropdown-toggle");
+            let dropdownMain = document.querySelector(".dropdown-main");
+            let hoverColor = document.querySelector(".hover-color");
+         
+            dropdownToggle.addEventListener("mouseover", ()=>{
+         
+               dropdownMain.style.display="block";
+               hoverColor.style.color = "#c5942c";
+             })
+            dropdownToggle.addEventListener("mouseout", ()=>{
+         
+               dropdownMain.style.display="none";
+               hoverColor.style.color = "black";
+         
+            })
+            dropdownMain.addEventListener("mouseover", ()=>{
+         
+          dropdownMain.style.display="block";
+         //  console.log("clicked !")
+         hoverColor.style.color = "#c5942c";
+         
+         })
+         dropdownMain.addEventListener("mouseout", ()=>{
+         
+          dropdownMain.style.display="none";
+          hoverColor.style.color = "black";
+         
+         })
     </script>
 
      @php
