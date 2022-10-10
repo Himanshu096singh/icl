@@ -53,7 +53,7 @@
       </div>
    </div>
 </div>
-<!-- END SECTION BANNER -->
+<!-- END SECTION BANNER new change -->
 <div class="section category-sec" style="background: url({{ url('public/frontend/images/banner/bg-cat.jpg') }});background-size: cover; background-position: center;">
    <div class="container">
       <div class="row justify-content-center">
