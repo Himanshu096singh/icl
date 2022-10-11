@@ -50,10 +50,10 @@
 
 
    <style>
-         .drop-menu{
+         /* .drop-menu{
          position:relative
          text-align:center;
-         }
+         } */
          .dropdown-main{
          display:none;
          }
@@ -194,8 +194,8 @@
             <div class="container">
                <div class="nav_block">
                   <a class="navbar-brand" href="{{ url('/') }}">
-                  <img class="logo_light" src="{{ url('public/frontend/images/logo_light.png') }}" alt="{{$info->alt}}" />
-                  <img class="logo_dark" src="{{ url('public/frontend/images/logo_dark.png') }}" alt="{{$info->alt}}" />
+                     <img class="logo_light" src="{{ url('public/frontend/images/logo_light.png') }}" alt="{{$info->alt}}" />
+                     <img class="logo_dark" src="{{ url('public/frontend/images/logo_dark.png') }}" alt="{{$info->alt}}" />
                   </a>
                </div>
             </div>
@@ -206,13 +206,12 @@
                   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-expanded="false"> 
                      <span class="ion-android-menu"></span>
                   </button>
-                  <a class="navbar-brand" href="{{ url('/') }}" style="display: none;">
+                  <a class="navbar-brand"  id="logo-mr-sm" href="{{ url('/') }}" style="display: none;">
                      <img class="logo_light" src="{{ url('public/frontend/images/logo_light.png') }}" alt="{{$info->alt}}" />
                      <img class="logo_dark" src="{{ url('public/frontend/images/logo_dark.png') }}" alt="{{$info->alt}}" />
                   </a>
-                  <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-expanded="false"> 
-                  <span class="ion-android-menu"></span>
-                  </button> -->
+                  <!-- <p>Ikshita</p> -->
+                  
                   <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
                      <ul class="navbar-nav drop-menu">
                         <li class="dropdown dropdown-mega-menu">
@@ -856,8 +855,7 @@ $(document).ready(function(){
             })
             dropdownMain.addEventListener("mouseover", ()=>{
          
-          dropdownMain.style.display="block";
-         //  console.log("clicked !")
+          dropdownMain.style.display="block"; 
          hoverColor.style.color = "#c5942c";
          
          })

@@ -1589,6 +1589,7 @@ blockquote p {
 }
 .form-control,
 .form-control:focus,
+.btn-fill-out,
 .custom_select select {
 	height: 44px;
 }
@@ -2080,7 +2081,7 @@ footer .widget_title,
 .header_wrap.transparent_header.header_with_topbar + .breadcrumb_section {
 	padding-top: 220px;
 }
-.form-control, .form-control:focus,
+.form-control, .form-control:focus,.btn-fill-out,
 .custom_select select {
 	height: 40px;
 }

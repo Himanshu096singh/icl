@@ -51,10 +51,10 @@
 
 
    <style>
-         .drop-menu{
+         /* .drop-menu{
          position:relative
          text-align:center;
-         }
+         } */
          .dropdown-main{
          display:none;
          }
@@ -62,18 +62,14 @@
          width: 70%;
          height: 200px;
          position: absolute;
-         margin: auto;
-         /* margin-top:2.5%; */
+         margin: auto; 
          margin-top: -15px !important;
          display:flex;
          background-color:white;
          margin-left: 12% !important;
-         padding-top:20px !important;
-         /* display:none; */
-         /* border:1px solid red !important; */
+         padding-top:20px !important; 
          }
-         .dropdown-menu>div{
-         /* border:1px solid red; */
+         .dropdown-menu>div{ 
          height: 200px;
          width:20%;
          margin-left:1.7rem;
@@ -105,6 +101,9 @@
          .dropdown-smd{
             display:none;
          }
+
+         /* Media query for iPads divices  */
+
          @media only screen and (min-width: 768px) and (max-width: 1024px) {
             .dropdown-lgd{
                display:none;
@@ -127,6 +126,8 @@
             margin:auto;
          }
          }
+
+         /* Media query for Mobile divices  */
          @media only screen and (min-width: 320px) and (max-width: 480px) {
             .dropdown-lgd{
                display:none;
@@ -194,8 +195,8 @@
             <div class="container">
                <div class="nav_block">
                   <a class="navbar-brand" href="<?php echo e(url('/')); ?>">
-                  <img class="logo_light" src="<?php echo e(url('public/frontend/images/logo_light.png')); ?>" alt="<?php echo e($info->alt); ?>" />
-                  <img class="logo_dark" src="<?php echo e(url('public/frontend/images/logo_dark.png')); ?>" alt="<?php echo e($info->alt); ?>" />
+                     <img class="logo_light" src="<?php echo e(url('public/frontend/images/logo_light.png')); ?>" alt="<?php echo e($info->alt); ?>" />
+                     <img class="logo_dark" src="<?php echo e(url('public/frontend/images/logo_dark.png')); ?>" alt="<?php echo e($info->alt); ?>" />
                   </a>
                </div>
             </div>
@@ -206,13 +207,12 @@
                   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-expanded="false"> 
                      <span class="ion-android-menu"></span>
                   </button>
-                  <a class="navbar-brand" href="<?php echo e(url('/')); ?>" style="display: none;">
+                  <a class="navbar-brand"  id="logo-mr-sm" href="<?php echo e(url('/')); ?>" style="display: none;">
                      <img class="logo_light" src="<?php echo e(url('public/frontend/images/logo_light.png')); ?>" alt="<?php echo e($info->alt); ?>" />
                      <img class="logo_dark" src="<?php echo e(url('public/frontend/images/logo_dark.png')); ?>" alt="<?php echo e($info->alt); ?>" />
                   </a>
-                  <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-expanded="false"> 
-                  <span class="ion-android-menu"></span>
-                  </button> -->
+                  <!-- <p>Ikshita</p> -->
+                  
                   <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
                      <ul class="navbar-nav drop-menu">
                         <li class="dropdown dropdown-mega-menu">
@@ -834,8 +834,7 @@ $(document).ready(function(){
             })
             dropdownMain.addEventListener("mouseover", ()=>{
          
-          dropdownMain.style.display="block";
-         //  console.log("clicked !")
+          dropdownMain.style.display="block"; 
          hoverColor.style.color = "#c5942c";
          
          })

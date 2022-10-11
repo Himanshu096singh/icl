@@ -74,7 +74,7 @@
                             @empty
                                 <tr>
                                     <td colspan="6">
-                                        <div class="alert alert-info">Your Cart is Empty</div>
+                                        <div class="alert alert-info text-center">Your Cart is Empty</div>
                                     </td>
                                 </tr>
                             @endforelse
@@ -84,10 +84,10 @@
                             	<td colspan="6" class="px-0">
                                 	<div class="row no-gutters align-items-right justify-content-right">
 
-                                    	 <div class="col-lg-4 col-md-6 mb-3 mb-md-0 float-right">
+                                    	 <div class="col-lg-4 col-md-6 mb-3 mb-md-0">
                                             <div class="coupon field_form input-group">
                                                 
-                                                <form action="{{url('cart/discount')}}" method="POST">  @csrf  
+                                                <form action="{{url('cart/discount')}}" class="d-flex"  method="POST">  @csrf  
                                                     <input type="text" name="name" required="" class="form-control form-control-sm" placeholder="Enter Coupon Code..">
                                                     <div class="input-group-append">
                                                     	<button class="btn btn-fill-out btn-sm" type="submit">Apply Coupon</button>
@@ -109,9 +109,9 @@
                                                 @endforeach
                                             </div>
                                     	</div> 
-                                       <div class="col-lg-8 col-md-6 text-left text-md-right">
+                                       <!-- <div class="col-lg-8 col-md-6 text-left text-md-right">
                                             <button class="btn btn-line-fill btn-sm" type="submit">Update Cart</button>
-                                        </div> 
+                                        </div>  -->
                                     </div>
                                 </td>
                             </tr>
