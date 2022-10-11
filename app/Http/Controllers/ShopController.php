@@ -16,7 +16,10 @@ class ShopController extends Controller
 {
     public function __construct(){
         $fpage = Page::get();
-        View::share(compact('fpage'));
+        $navcategory = Product_category::with(['subcategory'  => function($query){
+            $query->withCount('products');
+        }])->withCount('products')->get();
+        View::share(compact('fpage','navcategory'));
     }
     public function index($slug1, $slug2)
     {

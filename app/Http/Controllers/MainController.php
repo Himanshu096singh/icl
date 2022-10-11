@@ -20,10 +20,14 @@ class MainController extends Controller
 {
     public function __construct(){
         $fpage = Page::get();
-        View::share(compact('fpage'));
+        $navcategory = Product_category::with(['subcategory'  => function($query){
+            $query->withCount('products');
+        }])->withCount('products')->get();
+        View::share(compact('fpage','navcategory'));
     }
     public function index()
     {
+        
         $seo = SeoContent::where('page_name', \Request::route()->getName())->first();
         if (!empty($seo)) {
             $meta = [

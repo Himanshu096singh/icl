@@ -326,9 +326,7 @@ PAGE JS
 	/*===================================*
 	08. PARALLAX JS
 	*===================================*/
-	$(window).on('load', function() {
-        $('.parallax_bg').parallaxBackground();
-	});
+
 	
 	/*===================================*
 	09. MASONRY JS
@@ -730,15 +728,17 @@ PAGE JS
 		});
 	});
 	
-	$('.plus').on('click', function() {
+	$('#cart_plus').on('click', function() {
 		if ($(this).prev().val()) {
 			$(this).prev().val(+$(this).prev().val() + 1);
 		}
+		$("#cart_form").submit();
 	});
-	$('.minus').on('click', function() {
+	$('#cart_minus').on('click', function() {
 		if ($(this).next().val() > 1) {
 			if ($(this).next().val() > 1) $(this).next().val(+$(this).next().val() - 1);
 		}
+		$("#cart_form").submit();
 	});
 	
 	 /*===================================*

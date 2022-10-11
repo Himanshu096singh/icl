@@ -126,9 +126,9 @@
                         <a href="{{ url($p_product->category->slug.'/'.$p_product->subcategory->slug.'/'.$p_product->slug) }}">
                         <img src="{{ url('public/'.$p_product->image)}}" alt="{{ $p_product->alt }}">
                         </a>
-                        <div class="add-to-cart">
+                        {{-- <div class="add-to-cart">
                            <a href="#" class="btn btn-fill-out btn-radius"><i class="icon-basket-loaded"></i> Add To Cart</a>
-                        </div>
+                        </div> --}}
                      </div>
                      <div class="product_info">
                         <h6 class="product_title"><a href="{{ url($p_product->category->slug.'/'.$p_product->subcategory->slug.'/'.$p_product->slug) }}">{{ $p_product->name }}</a></h6>

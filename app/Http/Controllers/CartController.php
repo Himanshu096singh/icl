@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Admin\Product;
 use App\Models\Admin\Coupon;
 use App\Models\Admin\Page;
+use App\Models\Product_category;
 use Cart;
 use DB;
 use View;
@@ -20,7 +21,10 @@ class CartController extends Controller
      */
     public function __construct(){
         $fpage = Page::get();
-        View::share(compact('fpage'));
+        $navcategory = Product_category::with(['subcategory'  => function($query){
+            $query->withCount('products');
+        }])->withCount('products')->get();
+    View::share(compact('fpage','navcategory'));
     }
     public function index()
     {

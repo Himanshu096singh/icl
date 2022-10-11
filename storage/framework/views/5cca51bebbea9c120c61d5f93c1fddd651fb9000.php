@@ -53,13 +53,13 @@
       </div>
    </div>
 </div>
-<!-- END SECTION BANNER -->
+<!-- END SECTION BANNER new change -->
 <div class="section category-sec" style="background: url(<?php echo e(url('public/frontend/images/banner/bg-cat.jpg')); ?>);background-size: cover; background-position: center;">
    <div class="container">
       <div class="row justify-content-center">
          <div class="col-md-6">
             <div class="heading_s1 text-center">
-               <h1>Shop by Category</h1>
+               <h1>Shop by Category.</h1>
                <img src="<?php echo e(url('public/frontend/images/border/divider.png')); ?>" alt="divider">
             </div>
          </div>
@@ -126,9 +126,7 @@
                         <a href="<?php echo e(url($p_product->category->slug.'/'.$p_product->subcategory->slug.'/'.$p_product->slug)); ?>">
                         <img src="<?php echo e(url('public/'.$p_product->image)); ?>" alt="<?php echo e($p_product->alt); ?>">
                         </a>
-                        <div class="add-to-cart">
-                           <a href="#" class="btn btn-fill-out btn-radius"><i class="icon-basket-loaded"></i> Add To Cart</a>
-                        </div>
+                        
                      </div>
                      <div class="product_info">
                         <h6 class="product_title"><a href="<?php echo e(url($p_product->category->slug.'/'.$p_product->subcategory->slug.'/'.$p_product->slug)); ?>"><?php echo e($p_product->name); ?></a></h6>

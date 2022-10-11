@@ -17,13 +17,17 @@ use Cart as ShoppingCart;
 use Auth;
 use DB;
 use View;
+use App\Models\Product_category;
 use App\Libraries\Paytm\Encdec;
 
 class GuestController extends Controller
 {
    public function __construct(){
-        $fpage = Page::get();
-        View::share(compact('fpage'));
+    $fpage = Page::get();
+    $navcategory = Product_category::with(['subcategory'  => function($query){
+        $query->withCount('products');
+    }])->withCount('products')->get();
+    View::share(compact('fpage','navcategory'));
         }
     public function checkout()
     {
